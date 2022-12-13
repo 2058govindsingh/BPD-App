@@ -5,4 +5,8 @@
     <item android:title="Home" />
     <item android:title="Contact Us" />
     <item android:title="About Us" />
+    <item
+        android:id="@+id/logOutButton"
+        android:title="Log Out"
+        android:contentDescription="Log Out"/>
 </menu>

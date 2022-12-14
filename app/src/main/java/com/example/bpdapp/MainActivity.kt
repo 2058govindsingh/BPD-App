@@ -43,6 +43,18 @@ class MainActivity : AppCompatActivity() {
             } else
                 false
         }
+        binding.searchButton.setOnClickListener{
+            val searchActivityIntent=Intent(this,SearchActivity::class.java)
+            startActivity(searchActivityIntent)
+        }
+        binding.uploadButton.setOnClickListener{
+            val uploadActivityIntent=Intent(this,UploadActivity::class.java)
+            startActivity(uploadActivityIntent)
+        }
+        binding.oneTapActionButton.setOnClickListener{
+            val oneTapActivityIntent=Intent(this,OneTapActivity::class.java)
+            startActivity(oneTapActivityIntent)
+        }
     }
 
 //    fun setUpViews(){

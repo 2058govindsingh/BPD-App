@@ -25,11 +25,11 @@
                 android:id="@+id/hamburger"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_hamburger"
-                app:title="@string/titleTripuraPolice"
+                app:title="Beat Policing Diary"
                 app:menu="@menu/drawer_menu"
                 style="@style/Widget.MaterialComponents.Toolbar.Primary"
                 />
+<!--                app:navigationIcon="@drawable/ic_hamburger"-->
 
 
 

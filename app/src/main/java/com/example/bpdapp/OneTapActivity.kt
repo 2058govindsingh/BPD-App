@@ -45,18 +45,17 @@ class OneTapActivity : AppCompatActivity() {
     }
     private fun startTimer()
     {
-        Toast.makeText(this,"this is start timer",Toast.LENGTH_SHORT).show()
         serviceIntent.putExtra(TimerService.TIME_EXTRA,time)
         startService(serviceIntent)
         binding.startStopButton.text="Stop"
-        binding.startStopButton.icon=AppCompatResources.getDrawable(this,R.drawable.ic_start_button)
+        binding.startStopButton.icon=AppCompatResources.getDrawable(this,R.drawable.ic_stop_button)
         timerStarted=true
     }
     private fun stopTimer()
     {
         stopService(serviceIntent)
         binding.startStopButton.text="Start"
-        binding.startStopButton.icon=AppCompatResources.getDrawable(this,R.drawable.ic_stop_button)
+        binding.startStopButton.icon=AppCompatResources.getDrawable(this,R.drawable.ic_start_button)
         timerStarted=false
     }
     private val updateTime: BroadcastReceiver= object :BroadcastReceiver()

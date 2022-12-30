@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BPD App</string>
+    <string name="titleTripuraPolice">"Tripura Police "</string>
+    <string name="log_out">Log Out</string>
+    <string name="log_out_confirmation">Are you sure you want to log out?</string>
+    <string name="cancel">cancel</string>
+</resources>

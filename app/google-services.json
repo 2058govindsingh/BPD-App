@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015330629230",
+    "project_id": "bpd-app-33f1f",
+    "storage_bucket": "bpd-app-33f1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015330629230:android:7db0f02c14c73a08de687f",
+        "android_client_info": {
+          "package_name": "com.example.bpdapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015330629230-vkmu98vunl2bj95cg30cq0k5mu8eidb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg6QlqH6gACxkZ-Dj_L-hKNtNg66Z0vS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015330629230-vkmu98vunl2bj95cg30cq0k5mu8eidb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

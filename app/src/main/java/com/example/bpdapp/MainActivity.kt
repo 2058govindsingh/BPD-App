@@ -14,7 +14,6 @@ import kotlinx.coroutines.NonCancellable.cancel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
 //    lateinit var actionBarDrawerToggle :ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,10 +46,7 @@ class MainActivity : AppCompatActivity() {
             val searchActivityIntent=Intent(this,SearchActivity::class.java)
             startActivity(searchActivityIntent)
         }
-        binding.uploadButton.setOnClickListener{
-            val uploadActivityIntent=Intent(this,UploadActivity::class.java)
-            startActivity(uploadActivityIntent)
-        }
+
         binding.oneTapActionButton.setOnClickListener{
             val oneTapActivityIntent=Intent(this,OneTapActivity::class.java)
             startActivity(oneTapActivityIntent)

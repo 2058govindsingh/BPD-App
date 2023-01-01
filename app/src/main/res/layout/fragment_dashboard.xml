@@ -6,16 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardFragment">
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/dashboard_app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         >
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/hamburger"
             android:layout_width="match_parent"

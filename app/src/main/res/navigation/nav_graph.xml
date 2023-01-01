@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bpdapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_oneTapFragment3"
+            app:destination="@id/oneTapFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchActivityFragment2"
+            app:destination="@id/searchActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.bpdapp.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/manualSearchFragment"
+        android:name="com.example.bpdapp.ManualSearchFragment"
+        android:label="fragment_manual_search"
+        tools:layout="@layout/fragment_manual_search" />
+    <fragment
+        android:id="@+id/oneTapFragment"
+        android:name="com.example.bpdapp.OneTapFragment"
+        android:label="fragment_one_tap"
+        tools:layout="@layout/fragment_one_tap" />
+    <fragment
+        android:id="@+id/searchActivityFragment"
+        android:name="com.example.bpdapp.SearchActivityFragment"
+        android:label="fragment_search_activity"
+        tools:layout="@layout/fragment_search_activity" >
+        <action
+            android:id="@+id/action_searchActivityFragment_to_manualSearchFragment"
+            app:destination="@id/manualSearchFragment" />
+    </fragment>
+</navigation>

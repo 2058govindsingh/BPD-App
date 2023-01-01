@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat.registerReceiver
-import com.example.bpdapp.databinding.ActivityOneTapBinding
 import com.example.bpdapp.databinding.FragmentOneTapBinding
 import kotlin.math.roundToInt
 

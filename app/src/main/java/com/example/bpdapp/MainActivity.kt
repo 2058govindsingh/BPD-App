@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.bpdapp.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.ktx.auth
@@ -12,7 +15,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.NonCancellable.cancel
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
 //    lateinit var actionBarDrawerToggle :ActionBarDrawerToggle
 
@@ -20,37 +23,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
 
-        binding.hamburger.setOnMenuItemClickListener {
-            if (it.itemId == R.id.logOutButton) {
-                MaterialAlertDialogBuilder(this)
-                    .setTitle(resources.getString(R.string.log_out))
-                    .setMessage(resources.getString(R.string.log_out_confirmation))
-                    .setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
-                        // Respond to neutral button press
-                        dialog.dismiss()
-                    }
-                    .setPositiveButton(resources.getString(R.string.log_out)) { dialog, which ->
-                        // Respond to positive button press
-                        Firebase.auth.signOut()
-                        val loginActivityIntent = Intent(this, LoginActivity::class.java)
-                        startActivity(loginActivityIntent)
-                        finish()
-                    }
-                    .show()
-                true
-            } else
-                false
-        }
-        binding.searchButton.setOnClickListener{
-            val searchActivityIntent=Intent(this,SearchActivity::class.java)
-            startActivity(searchActivityIntent)
-        }
-
-        binding.oneTapActionButton.setOnClickListener{
-            val oneTapActivityIntent=Intent(this,OneTapActivity::class.java)
-            startActivity(oneTapActivityIntent)
-        }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
 //    fun setUpViews(){

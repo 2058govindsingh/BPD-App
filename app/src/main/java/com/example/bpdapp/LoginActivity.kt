@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
 
-            binding.appBarLayout.visibility = View.GONE
+            binding.loginAppBarLayout.visibility = View.GONE
             binding.loginTphLogo.visibility = View.GONE
             binding.textFieldEmail.visibility = View.GONE
             binding.textFieldPassword.visibility = View.GONE
@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
         }
         else
         {
-            binding.appBarLayout.visibility = View.VISIBLE
+            binding.loginAppBarLayout.visibility = View.VISIBLE
             binding.loginTphLogo.visibility = View.VISIBLE
             binding.textFieldEmail.visibility = View.VISIBLE
             binding.textFieldPassword.visibility = View.VISIBLE

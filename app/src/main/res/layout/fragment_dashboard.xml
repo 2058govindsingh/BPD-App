@@ -14,7 +14,6 @@
         app:layout_constraintStart_toStartOf="parent"
         >
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/hamburger"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Dashboard"
@@ -97,85 +96,7 @@
         app:layout_constraintTop_toBottomOf="@id/dashboard_police_station"
         app:layout_constraintBottom_toBottomOf="parent"
         >
-        />
-        <View
-            android:id="@+id/dashboard_horizontal_rule_0"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:padding="1dp"
-            android:background="@color/black"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_month_records"
-        />
-        <TextView
-            android:id="@+id/dashboard_last_month_records"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="7"
-            android:textColor="@color/green"
-            android:textSize="40sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_horizontal_rule_0"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_last_month_records_helper"
-            />
-        <TextView
-            android:id="@+id/dashboard_last_month_records_helper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="cases recorded for the last month"
-            android:textSize="20sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_month_records"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_horizontal_rule_1"
-            />
-        <View
-            android:id="@+id/dashboard_horizontal_rule_1"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:padding="1dp"
-            android:background="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_month_records_helper"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_last_year_records"
-            />
-        <TextView
-            android:id="@+id/dashboard_last_year_records"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="83"
-            android:textColor="@color/green"
-            android:layout_marginTop="5dp"
-            android:textSize="40sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_last_year_records_helper"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_month_records_helper"
-            />
-        <TextView
-            android:id="@+id/dashboard_last_year_records_helper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="cases recorded for the last year"
-            android:textSize="20sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_year_records"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_horizontal_rule_2"
-            />
-        <View
-            android:id="@+id/dashboard_horizontal_rule_2"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:padding="1dp"
-            android:background="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_last_year_records_helper"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_total_records"
-            />
+
         <TextView
             android:id="@+id/dashboard_total_records"
             android:layout_width="wrap_content"
@@ -187,7 +108,7 @@
             android:gravity="center_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dashboard_last_year_records_helper"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/dashboard_total_records_helper"
             />
         <TextView
@@ -200,16 +121,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dashboard_total_records"
-            app:layout_constraintBottom_toTopOf="@id/dashboard_horizontal_rule_3"
-            />
-        <View
-            android:id="@+id/dashboard_horizontal_rule_3"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:padding="1dp"
-            android:background="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/dashboard_total_records_helper"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

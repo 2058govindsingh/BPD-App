@@ -1,17 +1,19 @@
 package com.example.bpdapp
 
+import android.app.AlertDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.bpdapp.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import java.util.zip.Inflater
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? =null
@@ -50,9 +52,42 @@ class HomeFragment : Fragment() {
                 view.findNavController().navigate(action)
                 true
             }
+            else if(it.itemId == R.id.contact_us_button)
+            {
+                val dialogBuilder = AlertDialog.Builder(this.requireActivity())
+                val inflater = this.layoutInflater
+                val dialogView = inflater.inflate(R.layout.contact_us_dialog, null)
+                dialogBuilder.setView(dialogView)
+
+                dialogBuilder.setTitle("CONTACT US VIA")
+
+                dialogView.findViewById<Button>(R.id.compose_email_button).setOnClickListener{
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("spcomm@tripurapolice.nic.in") )
+                    intent.type = "message/rfc822"
+                    startActivity(Intent.createChooser(intent, "Choose an Email client :"))
+                }
+                dialogView.findViewById<Button>(R.id.dial_number_button).setOnClickListener{
+                    val intent = Intent(Intent.ACTION_DIAL)
+                    intent.data = Uri.parse("tel:03812370302")
+                    startActivity(intent)
+                }
+                val b = dialogBuilder.create()
+                b.show()
+                true
+            }
+            else if(it.itemId==R.id.about_us_button)
+            {
+                MaterialAlertDialogBuilder(this.requireContext())
+                    .setTitle("ABOUT US")
+                    .setMessage(resources.getString(R.string.about_tripura_police))
+                    .show()
+                true
+            }
             else
                 false
         }
+
         binding.searchButton.setOnClickListener{
             val action= HomeFragmentDirections.actionHomeFragmentToSearchActivityFragment2()
             view.findNavController().navigate(action)

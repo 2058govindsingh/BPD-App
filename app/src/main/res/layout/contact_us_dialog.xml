@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <Button
+        android:id="@+id/compose_email_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="govindyadav2058@gmail.com"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_email"
+        />
+    <Button
+        android:id="@+id/dial_number_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="08460379804"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/ic_call"
+        />
+
+
+
+
+</LinearLayout>

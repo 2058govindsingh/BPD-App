@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Home" />
     <item
         android:id="@+id/dashboard_button"
         android:title="Dashboard"
         android:contentDescription="Dashboard"/>
-
-    <item android:title="Contact Us" />
-    <item android:title="About Us" />
+    <item
+        android:id="@+id/contact_us_button"
+        android:title="Contact Us" />
+    <item
+        android:id="@+id/about_us_button"
+        android:title="About Us" />
     <item
         android:id="@+id/log_out_button"
         android:title="Log Out"

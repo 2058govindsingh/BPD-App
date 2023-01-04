@@ -3,6 +3,7 @@ package com.example.bpdapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -25,7 +26,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
-
 
         binding.loginButton.setOnClickListener {
 
@@ -53,6 +53,21 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_SHORT).show()
                         updateUI(null)
+                    }
+                }
+        }
+
+        binding.loginForgetPassword.setOnClickListener {
+            val email = binding.inputFieldEmail.text.toString()
+            auth.sendPasswordResetEmail(email)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Log.d(TAG, "Email sent.")
+                        Toast.makeText(baseContext, "Password reset link has been sent to email.",
+                            Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(baseContext, "Please check your email address.",
+                            Toast.LENGTH_SHORT).show()
                     }
                 }
         }

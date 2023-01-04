@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/dashboard_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Dashboard"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/dashboard_tp_logo"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tp_white_logo"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_app_bar_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/one_tap_action_button"
+        />
+    <ImageView
+        android:id="@+id/dashboard_inspector_photo"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@drawable/singham"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_app_bar_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dashboard_name_with_designation"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboard_name_with_designation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_inspector_photo"
+        app:layout_constraintBottom_toTopOf="@id/dashboard_police_station"
+        >
+
+    <TextView
+        android:id="@+id/dashboard_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Singham"
+        android:layout_marginLeft="10dp"
+        style="@style/TextAppearance.AppCompat.Headline"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/dashboard_designation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Police Sub Inspector"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_name"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/dashboard_police_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jirania Police Station"
+        android:paddingTop="10dp"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@drawable/ic_police_station"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_name_with_designation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dashboard_inspector_records_history"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboard_inspector_records_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dashboard_police_station"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/dashboard_total_records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="154"
+            android:textColor="@color/green"
+            android:layout_marginTop="5dp"
+            android:textSize="40sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/dashboard_total_records_helper"
+            />
+        <TextView
+            android:id="@+id/dashboard_total_records_helper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cases recorded for the all time"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dashboard_total_records"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+<<<<<<< HEAD
+=======
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+>>>>>>> test1
 import com.example.bpdapp.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.ktx.auth
@@ -12,15 +18,21 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.NonCancellable.cancel
 
 class MainActivity : AppCompatActivity() {
+<<<<<<< HEAD
 
     private lateinit var binding: ActivityMainBinding
 
+=======
+    private lateinit var navController: NavController
+    private lateinit var binding: ActivityMainBinding
+>>>>>>> test1
 //    lateinit var actionBarDrawerToggle :ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+<<<<<<< HEAD
 
         binding.hamburger.setOnMenuItemClickListener {
             if (it.itemId == R.id.logOutButton) {
@@ -55,6 +67,14 @@ class MainActivity : AppCompatActivity() {
             val oneTapActivityIntent=Intent(this,OneTapActivity::class.java)
             startActivity(oneTapActivityIntent)
         }
+=======
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+>>>>>>> test1
     }
 
 //    fun setUpViews(){

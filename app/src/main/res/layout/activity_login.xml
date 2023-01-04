@@ -7,13 +7,20 @@
     tools:context=".LoginActivity">
 
         <com.google.android.material.appbar.AppBarLayout
+<<<<<<< HEAD
             android:id="@+id/app_bar_layout"
+=======
+            android:id="@+id/login_app_bar_layout"
+>>>>>>> test1
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent">
             <com.google.android.material.appbar.MaterialToolbar
+<<<<<<< HEAD
                 android:id="@+id/hamburger"
+=======
+>>>>>>> test1
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title="@string/titleTripuraPolice"
@@ -27,7 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+=======
+        app:layout_constraintTop_toBottomOf="@id/login_app_bar_layout"
+>>>>>>> test1
         app:layout_constraintBottom_toTopOf="@id/text_field_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

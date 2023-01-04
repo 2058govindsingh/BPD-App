@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -7,6 +8,22 @@
     <item android:title="About Us" />
     <item
         android:id="@+id/logOutButton"
+=======
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard_button"
+        android:title="Dashboard"
+        android:contentDescription="Dashboard"/>
+    <item
+        android:id="@+id/contact_us_button"
+        android:title="Contact Us" />
+    <item
+        android:id="@+id/about_us_button"
+        android:title="About Us" />
+    <item
+        android:id="@+id/log_out_button"
+>>>>>>> test1
         android:title="Log Out"
         android:contentDescription="Log Out"/>
 </menu>

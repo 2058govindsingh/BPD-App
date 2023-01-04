@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BPDApp"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".OneTapActivity"
             android:exported="false">
@@ -33,6 +34,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+=======
+
+>>>>>>> test1
         <activity
             android:name=".LoginActivity"
             android:exported="true">

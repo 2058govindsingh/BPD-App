@@ -67,11 +67,12 @@
                 android:id="@+id/aadhaar_number_criminal_input"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Enter Aadhaar Number(optional)"
+                android:hint="Enter Aadhaar Number"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/manual_search_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
@@ -82,6 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/enter_details"
         app:layout_constraintBottom_toBottomOf="parent">
 

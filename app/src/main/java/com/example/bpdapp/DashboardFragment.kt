@@ -50,11 +50,11 @@ class DashboardFragment : Fragment() {
             val police = policeDao.getPoliceByEmail(currentPoliceEmail).await()
                 .toObject(Police::class.java)!!
             withContext(Dispatchers.Main) {
-                binding.dashboardName.text = police.Name
-                binding.dashboardDesignation.text = police.Designation
-                binding.dashboardPoliceStation.text = police.PoliceStation
-                binding.dashboardTotalRecords.text = police.Cases.toString()
-                Glide.with(binding.dashboardInspectorPhoto.context).load(police.ImageUrl).centerCrop().into(binding.dashboardInspectorPhoto)
+                binding.dashboardName.text = police.name
+                binding.dashboardDesignation.text = police.designation
+                binding.dashboardPoliceStation.text = police.policeStation
+                binding.dashboardTotalRecords.text = police.cases.toString()
+                Glide.with(binding.dashboardInspectorPhoto.context).load(police.imageUrl).centerCrop().into(binding.dashboardInspectorPhoto)
 
                 binding.dashboardProgressBar.visibility = View.GONE
                 binding.dashboardTpLogo.visibility = View.VISIBLE

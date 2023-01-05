@@ -1,10 +1,10 @@
 package com.example.bpdapp.models
 
 data class Police (
-    val Email: String = "",
-    val Name: String = "",
-    val Designation: String = "",
-    val PoliceStation: String = "",
-    val Cases: Int = 0,
-    val ImageUrl: String = ""
+    val email: String = "",
+    val name: String = "",
+    val designation: String = "",
+    val policeStation: String = "",
+    var cases: Int = 0,
+    val imageUrl: String = ""
 )

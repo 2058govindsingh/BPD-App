@@ -11,9 +11,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_oneTapFragment3"
-            app:destination="@id/oneTapFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
         <action
@@ -29,12 +26,11 @@
         android:id="@+id/manualSearchFragment"
         android:name="com.example.bpdapp.ManualSearchFragment"
         android:label="fragment_manual_search"
-        tools:layout="@layout/fragment_manual_search" />
-    <fragment
-        android:id="@+id/oneTapFragment"
-        android:name="com.example.bpdapp.OneTapFragment"
-        android:label="fragment_one_tap"
-        tools:layout="@layout/fragment_one_tap" />
+        tools:layout="@layout/fragment_manual_search" >
+        <action
+            android:id="@+id/action_manualSearchFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchActivityFragment"
         android:name="com.example.bpdapp.SearchActivityFragment"
@@ -43,5 +39,8 @@
         <action
             android:id="@+id/action_searchActivityFragment_to_manualSearchFragment"
             app:destination="@id/manualSearchFragment" />
+        <action
+            android:id="@+id/action_searchActivityFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
 </navigation>

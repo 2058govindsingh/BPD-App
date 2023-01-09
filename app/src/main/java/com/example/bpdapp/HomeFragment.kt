@@ -95,8 +95,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.oneTapActionButton.setOnClickListener{
-            val action= HomeFragmentDirections.actionHomeFragmentToOneTapFragment3()
-            view.findNavController().navigate(action)
+
         }
     }
     override fun onDestroy() {

@@ -51,7 +51,7 @@ class SearchActivityFragment : Fragment() {
             }
             else if(it.itemId == R.id.dashboard_button)
             {
-                val action = HomeFragmentDirections.actionHomeFragmentToDashboardFragment()
+                val action = SearchActivityFragmentDirections.actionSearchActivityFragmentToDashboardFragment()
                 view.findNavController().navigate(action)
                 true
             }

@@ -4,88 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ManualSearchFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_login_bk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="login background" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_manual_search_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-        <com.google.android.material.appbar.MaterialToolbar
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/manual_hamburger"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Search Criminal Activity"
+            app:menu="@menu/drawer_menu"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             />
 
     </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
-        android:id="@+id/enter_details"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/app_manual_search_layout"
-        app:layout_constraintBottom_toTopOf="@id/criminal_list">
-<!--        NAME INPUT-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_height="match_parent">
+        app:cardCornerRadius="20dp"
+        android:elevation="5dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/app_manual_search_layout">
 
-            <com.google.android.material.textfield.TextInputEditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
                 android:id="@+id/criminal_name_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Enter Name"
-                />
-<!--            Contact INPUT-->
-        </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="Enter Name">
 
-            <com.google.android.material.textfield.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/criminal_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/contact_number_criminal_input"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Enter Contact Number"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:hint="Enter Contact Number">
 
-<!--         AADHAAR INPUT-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/contact_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
             <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/aadhaar_number_criminal_input"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Enter Aadhaar Number"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:hint="Enter Aadhaar Number">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/manual_search_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aadhaar_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:layout_gravity="center"
+                />
+
+            <ProgressBar
+                android:layout_marginTop="20dp"
+                android:id="@+id/firebaseProgressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/criminal_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/enter_details"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/search_card"
+        tools:listitem="@layout/item_criminal">
 
 
     </androidx.recyclerview.widget.RecyclerView>

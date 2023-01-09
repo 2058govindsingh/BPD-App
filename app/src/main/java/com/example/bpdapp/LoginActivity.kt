@@ -25,20 +25,39 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        emailPasswordSignIn()
+        forgotPassword()
+
+    }
+
+    private fun emailPasswordSignIn() {
         auth = Firebase.auth
 
-        binding.loginButton.setOnClickListener {
+        binding.layoutLoginFile.loginButton.setOnClickListener {
+            val email = binding.layoutLoginFile.loginEmail.text.toString().trim()
+            val password = binding.layoutLoginFile.loginPassword.text.toString()
 
-            binding.loginAppBarLayout.visibility = View.GONE
-            binding.loginTphLogo.visibility = View.GONE
-            binding.textFieldEmail.visibility = View.GONE
-            binding.textFieldPassword.visibility = View.GONE
-            binding.loginForgetPassword.visibility = View.GONE
-            binding.loginButton.visibility = View.GONE
+            var fieldEmpty = false
+
+            if (email == "") {
+                fieldEmpty = true
+                binding.layoutLoginFile.textInputLoginEmail.error = "Email field can't be empty."
+            } else {
+                binding.layoutLoginFile.textInputLoginEmail.error = null
+            }
+
+            if (password == "") {
+                fieldEmpty = true
+                binding.layoutLoginFile.textInputLoginPassword.error = "Password field can't be empty."
+            } else {
+                binding.layoutLoginFile.textInputLoginPassword.error = null
+            }
+
+            if (fieldEmpty)
+                return@setOnClickListener
+
+            binding.layoutLogin.visibility = View.GONE
             binding.progressBar.visibility = View.VISIBLE
-
-            val email = binding.inputFieldEmail.text.toString().trim()
-            val password = binding.inputFieldPassword.text.toString()
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
@@ -50,23 +69,36 @@ class LoginActivity : AppCompatActivity() {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.makeText(this, "Authentication failed.",
                             Toast.LENGTH_SHORT).show()
                         updateUI(null)
                     }
                 }
         }
 
-        binding.loginForgetPassword.setOnClickListener {
-            val email = binding.inputFieldEmail.text.toString()
+    }
+
+    private fun forgotPassword() {
+        binding.layoutLoginFile.forgotPasswordTV.setOnClickListener {
+            val email = binding.layoutLoginFile.loginEmail.text.toString()
+
+            binding.layoutLoginFile.textInputLoginPassword.error = null
+
+            if (email == "") {
+                binding.layoutLoginFile.textInputLoginEmail.error = "Email field can't be empty."
+                return@setOnClickListener
+            } else {
+                binding.layoutLoginFile.textInputLoginEmail.error = null
+            }
+
             auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Log.d(TAG, "Email sent.")
-                        Toast.makeText(baseContext, "Password reset link has been sent to email.",
+                        Toast.makeText(this, "Password reset link has been sent to email.",
                             Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(baseContext, "Please check your email address.",
+                        Toast.makeText(this, "Please check your email address.",
                             Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -91,12 +123,7 @@ class LoginActivity : AppCompatActivity() {
         }
         else
         {
-            binding.loginAppBarLayout.visibility = View.VISIBLE
-            binding.loginTphLogo.visibility = View.VISIBLE
-            binding.textFieldEmail.visibility = View.VISIBLE
-            binding.textFieldPassword.visibility = View.VISIBLE
-            binding.loginForgetPassword.visibility = View.VISIBLE
-            binding.loginButton.visibility = View.VISIBLE
+            binding.layoutLogin.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
         }
     }

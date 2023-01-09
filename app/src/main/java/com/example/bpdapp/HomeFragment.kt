@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.hamburger.setOnMenuItemClickListener {
+        binding.homeHamburger.setOnMenuItemClickListener {
             if (it.itemId == R.id.log_out_button) {
                 MaterialAlertDialogBuilder(this.requireContext())
                     .setTitle(resources.getString(R.string.log_out))
@@ -63,13 +63,13 @@ class HomeFragment : Fragment() {
 
                 dialogView.findViewById<Button>(R.id.compose_email_button).setOnClickListener{
                     val intent = Intent(Intent.ACTION_SEND)
-                    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("spcomm@tripurapolice.nic.in") )
+                    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("govindyadav2058@gmail.com") )
                     intent.type = "message/rfc822"
                     startActivity(Intent.createChooser(intent, "Choose an Email client :"))
                 }
                 dialogView.findViewById<Button>(R.id.dial_number_button).setOnClickListener{
                     val intent = Intent(Intent.ACTION_DIAL)
-                    intent.data = Uri.parse("tel:03812370302")
+                    intent.data = Uri.parse("tel:08460379804")
                     startActivity(intent)
                 }
                 val b = dialogBuilder.create()

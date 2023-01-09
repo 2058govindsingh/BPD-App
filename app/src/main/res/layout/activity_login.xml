@@ -6,102 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/login_app_bar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-            <com.google.android.material.appbar.MaterialToolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:title="@string/titleTripuraPolice"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <ImageView
-        android:id="@+id/login_tph_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/login_app_bar_layout"
-        app:layout_constraintBottom_toTopOf="@id/text_field_email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@mipmap/ic_tph_logo"
-        />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_username"
+    <ScrollView
+        android:id="@+id/layoutLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/login_tph_logo"
-        app:layout_constraintBottom_toTopOf="@id/login_button">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_field_email"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:hint="Username"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/text_field_password"
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_field_email"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="12">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_shape_bk"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_login_bk"
+                        android:contentDescription="login background" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                />
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_field_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:padding="16dp"
-            app:endIconMode="password_toggle"
-            app:layout_constraintBottom_toTopOf="@id/login_forget_password"
-            app:layout_constraintTop_toBottomOf="@id/text_field_email"
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_field_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:text="Beat Policing Diary"
+                    android:layout_marginTop="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
 
-        <TextView
-            android:padding="16dp"
-            android:id="@+id/login_forget_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Password?"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            app:layout_constraintTop_toBottomOf="@id/text_field_password"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+                <include
+                    android:id="@+id/layout_login_file"
+                    layout="@layout/layout_login"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+            </LinearLayout>
 
-        android:id="@+id/login_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_username"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -111,6 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

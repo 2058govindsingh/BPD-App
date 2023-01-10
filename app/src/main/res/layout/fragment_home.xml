@@ -54,46 +54,76 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="20dp">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/search_button"
-                style="?attr/floatingActionButtonLargeStyle"
-                android:layout_width="wrap_content"
+            
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_search"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                app:backgroundTint="#FBE7E7"
-                app:fabCustomSize="144dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:maxImageSize="104dp"
-                app:srcCompat="@drawable/ic_outline_search" />
+                app:layout_constraintEnd_toStartOf="@id/layout_one_tap"
+                app:layout_constraintTop_toTopOf="parent">
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/search_button"
+                    style="?attr/floatingActionButtonLargeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="#FBE7E7"
+                    app:fabCustomSize="144dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:maxImageSize="104dp"
+                    app:srcCompat="@drawable/ic_outline_search" />
+
+                <TextView
+                    android:id="@+id/textView_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Search Activity"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/search_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_one_tap"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/layout_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_search"
+            app:layout_constraintBottom_toBottomOf="@id/layout_search" >
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/one_tap_action_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_outline_one_tap"
-                android:layout_marginEnd="12dp"
                 app:backgroundTint="#FBE7E7"
                 app:fabCustomSize="144dp"
                 app:maxImageSize="104dp"
                 android:scaleType="fitXY"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 style="?attr/floatingActionButtonLargeStyle"/>
 
-            <TextView
-                android:id="@+id/textView_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Search Activity"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/search_button"
-                app:layout_constraintStart_toStartOf="@id/search_button"
-                app:layout_constraintEnd_toEndOf="@id/search_button"/>
-
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/videoProgressBar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:indicatorSize="144dp"
+                app:trackThickness="72dp"
+                app:indicatorColor="#FBE7E7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"/>
 
 
             <TextView
@@ -103,13 +133,16 @@
                 android:text="One Tap Active"
                 android:layout_marginTop="12dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/one_tap_action_button"
-                app:layout_constraintStart_toStartOf="@id/one_tap_action_button"
-                app:layout_constraintEnd_toEndOf="@id/one_tap_action_button" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

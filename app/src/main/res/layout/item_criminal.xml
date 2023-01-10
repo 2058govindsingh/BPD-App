@@ -15,11 +15,12 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Name : "
             app:layout_constraintBottom_toBottomOf="@id/criminal_name"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location"/>
 
         <TextView
             android:id="@+id/criminal_name"
@@ -34,11 +35,12 @@
 
         <TextView
             android:id="@+id/phone"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Phone : "
             app:layout_constraintBottom_toBottomOf="@id/criminal_phone"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location"/>
 
         <TextView
             android:id="@+id/criminal_phone"
@@ -54,11 +56,12 @@
 
         <TextView
             android:id="@+id/aadhaar"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Aadhaar : "
             app:layout_constraintBottom_toBottomOf="@id/criminal_aadhaar"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location"/>
 
         <TextView
             android:id="@+id/criminal_aadhaar"
@@ -74,11 +77,12 @@
 
         <TextView
             android:id="@+id/crime"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Crime : "
             app:layout_constraintBottom_toBottomOf="@id/criminal_crime"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location"/>
 
         <TextView
             android:id="@+id/criminal_crime"
@@ -94,11 +98,12 @@
 
         <TextView
             android:id="@+id/crime_date"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Date : "
             app:layout_constraintBottom_toBottomOf="@id/criminal_crime_date"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/location"/>
 
         <TextView
             android:id="@+id/criminal_crime_date"

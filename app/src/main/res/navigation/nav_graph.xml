@@ -11,17 +11,12 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_searchActivityFragment2"
             app:destination="@id/searchActivityFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/dashboardFragment"
-        android:name="com.example.bpdapp.DashboardFragment"
-        android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/manualSearchFragment"
         android:name="com.example.bpdapp.ManualSearchFragment"
@@ -43,4 +38,10 @@
             android:id="@+id/action_searchActivityFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.bpdapp.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard"/>
+
 </navigation>

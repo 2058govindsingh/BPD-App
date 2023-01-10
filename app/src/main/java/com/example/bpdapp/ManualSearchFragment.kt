@@ -116,7 +116,7 @@ class ManualSearchFragment : Fragment(), CriminalClicked {
 
             if (name == "" && phone == "" && aadhaar == "") {
                 val data = mutableListOf<Criminal>()
-                adapter = CriminalAdapter(data, listener)
+                adapter = CriminalAdapter(data, listener, requireContext())
                 binding.criminalList.adapter = adapter
                 Toast.makeText(requireActivity(), "Please enter details.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -127,11 +127,11 @@ class ManualSearchFragment : Fragment(), CriminalClicked {
 
             GlobalScope.launch {
                 val criminalDao = CriminalDao()
-                val data = criminalDao.checkCriminal(name, phone, aadhaar)
+                val data = criminalDao.checkCriminal(name, phone, aadhaar, )
                 withContext(Dispatchers.Main) {
                     if (data.isEmpty())
                         Toast.makeText(context, "No data found", Toast.LENGTH_SHORT).show()
-                    adapter = CriminalAdapter(data, listener)
+                    adapter = CriminalAdapter(data, listener, requireContext())
                     binding.criminalList.adapter = adapter
                     binding.searchButton.visibility = View.VISIBLE
                     binding.firebaseProgressBar.visibility = View.GONE

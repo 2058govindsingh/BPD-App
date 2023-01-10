@@ -6,5 +6,7 @@ data class Police (
     val designation: String = "",
     val policeStation: String = "",
     var cases: Int = 0,
-    val imageUrl: String = ""
+    val imageUrl: String = "",
+    val mobileNumber :String =""
+
 )

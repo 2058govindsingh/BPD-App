@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="govindyadav2058@gmail.com"
         android:textAllCaps="false"
-        android:drawableLeft="@drawable/ic_email"
+        android:drawableLeft="@drawable/ic_baseline_email_white"
         />
     <Button
         android:id="@+id/dial_number_button"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="08460379804"
         android:textAllCaps="false"
-        android:drawableLeft="@drawable/ic_call"
+        android:drawableLeft="@drawable/ic_baseline_call_24"
         />
 
 

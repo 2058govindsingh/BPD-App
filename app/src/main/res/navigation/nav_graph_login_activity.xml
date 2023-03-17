@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login_activity"
+    app:startDestination="@id/loginPhoneNumberFragment2">
+
+    <fragment
+        android:id="@+id/loginEmailFragment"
+        android:name="com.example.bpdapp.LoginEmailFragment"
+        android:label="fragment_login_email"
+        tools:layout="@layout/fragment_login_email" >
+        <action
+            android:id="@+id/action_loginEmailFragment_to_loginPhoneNumberFragment2"
+            app:destination="@id/loginPhoneNumberFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginOtpVerificationFragment"
+        android:name="com.example.bpdapp.LoginOtpVerificationFragment"
+        android:label="fragment_login_otp_verification"
+        tools:layout="@layout/fragment_login_otp_verification" >
+        <argument
+            android:name="otp"
+            app:argType="string" />
+        <argument
+            android:name="resendToken"
+            app:argType="com.google.firebase.auth.PhoneAuthProvider$ForceResendingToken" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPhoneNumberFragment2"
+        android:name="com.example.bpdapp.LoginPhoneNumberFragment"
+        android:label="fragment_login_phone_number"
+        tools:layout="@layout/fragment_login_phone_number" >
+        <action
+            android:id="@+id/action_loginPhoneNumberFragment2_to_loginOtpVerificationFragment"
+            app:destination="@id/loginOtpVerificationFragment" />
+        <action
+            android:id="@+id/action_loginPhoneNumberFragment2_to_loginEmailFragment"
+            app:destination="@id/loginEmailFragment" />
+    </fragment>
+</navigation>
